@@ -13,6 +13,7 @@ if (edad >= 18){
     alert("No podra contratar un plan sin supervision de un adulto")
 }
 
+
 while (habilitado = true) {
     const actividades = parseInt(prompt("Ingrese la actividad a la que esta interesado: \n 1-OCR \n 2-Funcional \n 3-Musculacion \n 4-Pack Full \n 5-Salir"))
 }
