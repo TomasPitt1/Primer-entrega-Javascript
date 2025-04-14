@@ -19,7 +19,7 @@ const PackFull = {
     trimestral: 178000
 }
 
-const actividades = [{ "plan ocr": OCR }, { "plan funcional": Funcional }, { "plan musculacion": Musculacion }, { "plan pack full": PackFull }]
+const actividades = [{ "ocr": OCR }, { "funcional": Funcional }, { "musculacion": Musculacion }, { "pack full": PackFull }]
 const personalTrainer = 10000
 
 function calcularPrecioFinal(actividadElegida, planElegido, conPersonal) {
@@ -30,7 +30,7 @@ function calcularPrecioFinal(actividadElegida, planElegido, conPersonal) {
             precio = actividad[actividadElegida.toLowerCase()][planElegido.toLowerCase()]
         }
     }
-    if (conPersonal) {
+    if (conPersonal.toLowerCase() === "si") {
         precio += personalTrainer
     }
     return precio
@@ -47,12 +47,12 @@ function promptConTexto(texto, esnumero) {
 }
 
 function ingresarParametros(nombre) {
-    const actividadElegida = promptConTexto("En que plan esta interesado: \n Plan OCR \n Plan Funcional \n Plan Musculacion \n Plan Pack Full")
+    const actividadElegida = promptConTexto("En que plan esta interesado: \n OCR \n Funcional \n Musculacion \n Pack Full")
 
     const planElegido = promptConTexto("Te gustaria abonar un mes o tres meses con un descuento: \n Mensual \n Trimestral")
 
-    const conPersonaltrainer = promptConTexto("Quiere un personal trainer: \n Si \n No")
-    const precioFinal = calcularPrecioFinal(actividadElegida, planElegido, conPersonaltrainer)
+    const conPersonal = promptConTexto("Quiere un personal trainer: \n Si \n No")
+    const precioFinal = calcularPrecioFinal(actividadElegida, planElegido, conPersonal)
     mostrarPrecioSimulado(nombre, precioFinal)
 }
 function ejecutarPrograma() {
