@@ -23,7 +23,7 @@ const actividades = [{ "plan ocr": OCR }, { "plan funcional": Funcional }, { "pl
 const personalTrainer = 10000
 
 function calcularPrecioFinal(actividadElegida, planElegido, conPersonal) {
-    debugger
+    
     let precio = 0
     for (actividad of actividades) {
         if (actividad[actividadElegida.toLowerCase()]) {
